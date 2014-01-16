@@ -1,0 +1,163 @@
+<fieldset>
+      <%= form_for user, :html => {:class => 'form-stacked'} do |f| %>
+        <% if user.errors.any? %>
+          <div class="alert-message block-message error">
+            <p><%= "#{pluralize(user.errors.count, "problem")} with your registration:" %></p>
+            <div class="errors">
+              <% user.errors.full_messages.each do |msg| %>
+                <p><%= msg %></p>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+
+        <div class="panel panel-default">
+          <div class="panel-heading center">
+              <h2>Your Information</h2>
+          </div>
+          <div class="panel-body">
+            
+            <div class="form-group col-md-6">
+              <div class="input">
+                <%= f.text_field :name, :class => "field", class: "form-control", placeholder: "Full Name" %>
+              </div>
+            </div>
+
+            <div class="form-group col-md-6">
+              <div class="input">
+                <%= f.text_field :email, :class => "field", class: "form-control", placeholder: "Email Address" %>
+              </div>
+            </div>
+
+            <div class="form-group col-md-6">
+              <div class="input">
+                <%= f.password_field :password, :class => "field", class: "form-control", placeholder: "Password" %>
+                <% if defined? editing %>
+                <% end %>
+              </div>
+            </div>
+
+            <div class="form-group col-md-6">
+              <div class="input">
+                <%= f.password_field :password_confirmation, :class => "field", class: "form-control", placeholder: "Confirm Password" %>
+              </div>
+            </div>
+          </div>
+           <% if params[:action] == "new" && params[:controller] == "users" %>
+            <% else %>
+              <div class="panel-footer">
+                <small>Enter a new password to change your password. Leave blank to keep your current password.</small>
+              </div>
+            <% end %>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading center">
+            <h2>Shipping Information</h2>
+          </div>
+          <div class="panel-body">
+            
+            <div class="form-group col-md-12">
+              <div class="input">
+                <%= f.text_field :street1, :class => "field", class: "form-control", placeholder: "Address" %>
+              </div>
+            </div>
+
+            <div class="form-group col-md-12">
+              <div class="input">
+                <%= f.text_field :street2, :class => "field", class: "form-control", placeholder: "Apartmant, Suite, Unit etc." %>
+              </div>
+            </div>
+
+            <div class="form-group col-md-6">
+              <div class="input">
+                <%= f.text_field :city, :class => "field", class: "form-control", placeholder: "City" %>
+              </div>
+            </div>
+
+            <div class="form-group col-md-3">
+              <div class="input">
+                <%= f.text_field :state, :class => "field", class: "form-control", placeholder: "State", maxlength: "2"  %>
+              </div>
+            </div>
+
+            <div class="form-group col-md-3">
+              <div class="input">
+                <%= f.text_field :zip, :class => "field", class: "form-control", placeholder: "ZIP", maxlength: "5"  %>
+              </div>
+            </div>
+
+          </div>
+          <div class="panel-footer">
+            <small>Toilet Paper Society is currently accepting members in the United States only.<br />
+            </small>
+          </div>
+        </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading center">
+          <h2>Billing Information</h2>
+        </div>
+        <div class="panel-body">
+          <%= f.hidden_field :stripe_token %>
+          <%= f.hidden_field :last_4_digits %>
+
+        <% if user.last_4_digits %>
+          <div id="change-card" class="clearfix">
+            <label>Card</label>
+            <div class="input">
+              <span>
+                Using card ending with 
+                <%= user.last_4_digits %> 
+                <%= link_to "(change)", "#" %>
+              </span>
+            </div>
+          </div>
+        <% end %>
+
+        <noscript>
+          <p>This form requires Javascript to use</p>
+        </noscript>
+
+        <div id="credit-card" style="<%= user.last_4_digits ? "display:none" : "display:block" %>">
+          <div id="credit-card-errors" style="display:none">
+            <div id="stripe-error-message" class="alert-message block-message error">
+            </div>
+          </div>
+
+          <!-- these fields are disabled before submission and are never transmitted back to rails -->
+          <div class="form-group col-md-6">
+            <%= label_tag :credit_card_number, "Credit Card Number" %>
+              <%= text_field_tag :credit_card_number, params[:credit_card_number], :class => "field form-control ccn", :disabled => true %>
+          </div>
+          <div class="form-group col-md-2">
+            <%= label_tag :cvv, "CVV" %>  
+            <%= text_field_tag :cvv, params[:cvv], :class => "field form-control cvv", :disabled => true %>
+          </div>
+
+          <div class="form-group col-md-4">
+            <%= label_tag :expiry_date, "Expiration Date" %>
+            <div class="input">
+              <%= date_select "", :expiry_date, {:discard_day => true, :order => [:month, :year], :use_month_numbers => true, :start_year => Date.today.year, :end_year => Date.today.year + 25, :disabled => true}, {:class => "btn btn-default from-control dropdown-toggle"} %>
+            </div>
+            <!-- empty -->
+          </div>
+          </div>
+        </div>
+        <% if params[:action] == "new" && params[:controller] == "users" %>
+        <div class="panel-footer">
+          <small>By registering, you agree to our <%=link_to "Terms of Service", terms_path, target: "_new" %>.</small>
+        </div>
+        <% end %>
+      </div>
+          
+
+        <div class="actions">
+          <div class="note col-md-12">
+          <%= f.submit((defined?(editing) ? "Update" : "Activate Your Membership"), :class => "btn btn-primary btn-lg btn-block") %>
+        </div>
+        
+      <% end %>
+      </div>
+   
+    </fieldset>

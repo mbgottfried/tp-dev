@@ -1,0 +1,34 @@
+<nav class="navbar navbar-static-top navbar-default" role="navigation">
+  <div class="container">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <%= link_to image_tag("logo-head.png"), root_path, class: "navbar-brand" %>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <% if current_user %>
+              <li><%= link_to "How It Works", how_it_works_path %></li>
+              <li><%= link_to "Wipe Away Hunger", feeding_america_path %></li>
+              <li><%= link_to "Account Settings", clubhouse_path %></li>
+              <li><%= link_to "Sign Out", sign_out_path %></li>
+            <% else %>
+              <li><%= link_to "Join Now", register_path, class: "btn-join" %></li>
+              <li><%= link_to "How It Works", how_it_works_path %></li>
+              <li><%= link_to "Wipe Away Hunger", feeding_america_path %></li>
+              <li><%= link_to "Log In", sign_in_path %></li>
+            <% end %>
+          <li><%= link_to "twitter", "https://www.twitter.com/tp_society", target: "_blank", class: "header-twitter" %></li>
+          <li><%= link_to "facebook", "https://www.facebook.com/TPsoc", target: "_blank", class: "header-facebook" %></li>
+          <li><%= link_to "instagram", "https://www.instagram.com/tp_society", target: "_blank", class: "header-instagram" %></li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</div> <!-- Container -->
+</nav>

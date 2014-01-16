@@ -1,0 +1,426 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Source+Sans+Pro:900,600);
+
+html {
+	overflow-x:hidden;
+}
+
+body { font-family: "Open Sans",helvetica, arial, sans-serif;}
+
+::selection {
+	background: #fff2a8; /* Safari */
+	}
+::-moz-selection {
+	background: #fff2a8; /* Firefox */
+}
+
+img {
+	max-width: 100%;
+}
+
+.center {
+	text-align: center;
+}
+
+.right {
+	text-align: right;
+}
+
+.left {
+	text-align: left;
+}
+
+.top-down {
+	margin-top: 120px;
+}
+
+div.main {
+  padding-top:80px;
+}
+div.topbar ul.nav {
+  float:right;
+}
+
+.navbar {
+	margin-bottom: 0px;
+	position: fixed;
+	width: 100%;
+	height: 92px;
+	border-radius: 0px;
+}
+
+.navbar-brand {
+	display: block;
+	padding: 5px;
+}
+
+.navbar-brand img {
+	min-height: 75px;
+	margin: 0 auto;
+	width: auto; 
+	position: absolute;
+}
+
+
+#home-hero {
+	background: url(/assets/home-hero.jpg) no-repeat center center fixed;
+	height: 650px;
+	padding: 200px 0;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+}
+
+.header-twitter {
+    background: url("/assets/twitter.png") no-repeat scroll center bottom rgba(0, 0, 0, 0);
+    height: 16px;
+    margin: 3px 0 0;
+    text-indent: -99999px;
+    width: 16px;
+}
+
+.header-facebook {
+    background: url("/assets/facebook.png") no-repeat scroll center bottom rgba(0, 0, 0, 0);
+    height: 16px;
+    margin: 5px 0 0;
+    text-indent: -99999px;
+    width: 16px;
+}
+
+.header-instagram {
+    background: url("/assets/instagram.png") no-repeat scroll center bottom rgba(0, 0, 0, 0);
+    height: 16px;
+    margin: 5px 0 0;
+    text-indent: -99999px;
+    width: 16px;
+}
+
+.navbar-default .navbar-nav > li > a {
+    font-weight: 600;
+    color: #0B2537;
+}
+
+.navbar-nav > li > a {
+	padding-top: 35px;
+}
+
+h1 {
+	font-family: "Source Sans Pro", helvetica, arial, sans-serif;
+	font-size: 55px;
+	font-weight: 900;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+h2 {
+	font-family: "Source Sans Pro", helvetica, arial, sans-serif;
+	font-size: 44.5px;
+	font-weight: 600;
+	margin: 0;
+	text-transform: uppercase;
+	color: #0B2436;
+}
+
+#home-hero h1, #home-hero h2, #home-hero h5 {
+	text-shadow: 0px 0px 7px #000000;
+	color: #ffffff;
+}
+
+h3 {
+	font-family: "Source Sans Pro", helvetica, arial, sans-serif;
+	color: #ffffff;
+	font-size: 30px;
+	font-weight: 400;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+h4 {
+	font-family: "Source Sans Pro", helvetica, arial, sans-serif;
+	color: #428BCA;
+	font-size: 50px;
+	text-transform: uppercase;
+}
+
+h5 {
+	font-family: "Source Sans Pro", helvetica, arial, sans-serif;
+	color: #333333;
+	font-size: 30px;
+	font-weight: 400;
+}
+
+.price {
+	color: #B2293B;
+}
+
+h5 a {
+	transition: color 0.2s ease 0s;
+}
+
+h5 a:hover {
+	text-decoration: none;
+	transition: color 0.2s ease 0s;
+}
+
+#home-hero .container {
+	padding: 100px 0 0;
+}
+
+.dgcwypd {
+
+}
+
+.join-home {
+	text-align: center;
+	margin: 30px 0 0;
+}
+
+.btn-get-started {
+	background: #b2293b;
+	color: #ffffff;
+	padding: 20px;
+	font-size: 20px;
+	font-weight: 600;
+	transition: background .4s;
+	border-radius: 5px;
+	margin: 30px 0 0;
+}
+
+.btn-get-started:hover {
+	color: #ffffff;
+	background: #801422;
+}
+
+#quality-banner {
+	text-align: center;
+	background: #022437;
+	color: #ffffff;
+	padding: 30px 0;
+}
+
+.btn-join {
+	color: #b2293b !important; 
+	margin-top: -1px;
+	transition: background .4s;
+}
+
+.btn-join:hover {
+	color: #801422 !important;
+}
+
+#how-it-works {
+	padding: 40px 0 60px;
+	text-align: center;
+	background: url("/assets/stripe.png");
+}
+
+#how-it-works h2 {
+	margin: 0 0 30px;
+	font-weight: 700;
+	color: #022437;
+}
+
+#how-it-works h3 {
+	font-weight: 700;
+	color: #022437;
+}
+
+
+p {
+	font-size: 16px;
+}
+
+footer {
+	background: #0c2638;
+	min-height: 220px;
+	padding: 20px 0 0;
+	color: #ffffff;
+}
+
+footer ul {
+	list-style-type: none;
+	color: #fff;
+	padding: 0;
+}
+
+h5 {
+	font-family: "Helvetica Neue",helvetica, arial, sans-serif;
+	font-size: 28px;
+    font-weight: 200;
+    line-height: 1.4;
+}
+
+footer h5 {
+	font-family: "Open Sans",helvetica, arial, sans-serif;
+	font-weight: 600;
+	padding: 20px 0 0;
+	color: #ffffff;
+	font-size: 15px;
+}
+
+#register {
+	margin: 200px 0;
+}
+
+.heading {
+	margin: 0 0 30px;
+	color: #0c2638;
+}
+
+.ccn-group, .cvv-group {
+	float: left;
+}
+
+.ccn-group {
+	width: 50%;
+}
+
+.cvv-group {
+	width: 20%;
+	margin: 0 0 0 2%;
+}
+
+.col-md-6, .col-md-4, .col-md-2 {
+    position: relative;
+    z-index: 10;
+}
+
+#plans {
+	margin: 200px 0 0;
+}
+
+.fine-print {
+	margin: 15px 0 0;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.member-buttons li{
+	margin: 0 0 15px;
+}
+
+.signup-notes {
+	margin: 20px 0;
+}
+
+#stripe-error-message {
+	background: #FFB7B7;
+	padding: 10px 10px;
+	margin: 0 0 10px;
+}
+
+.alert-message {
+	background: #FFB7B7;
+	padding: 10px 10px;
+	margin: 0 0 10px;
+}
+
+#left-right {
+	background: #ecf0f1;
+}
+
+.tp-king {
+	margin: 70px 0 0;
+}
+
+.left-right-first {
+	min-height: 450px;
+}
+
+.left-right-second {
+	min-height: 430px;
+}
+
+.left-right-third {
+	min-height: 350px;
+}
+
+.red {
+	color: #B2293B;
+}
+
+.first-text {
+	margin: 115px 0 0;
+}
+
+.second-text {
+	margin: 40px 0 0;
+}
+
+.left-right-join {
+	background: #022437;
+	padding: 40px;
+	font-size: 28px;
+	color: #ffffff;
+	text-transform: uppercase;
+	transition: background 0.4s ease 0s;
+}
+
+.left-right-join:hover {
+	background: #428BCA;
+	text-decoration: none;
+	color: #ffffff;
+	transition: background 0.4s ease 0s;
+}
+
+.grey-marketing {
+	background: #ffffff;
+	padding: 60px 0 0;
+	margin: 0px 0 60px;
+}
+
+.empty-roll {
+	bottom: 0;
+	position: absolute;
+}
+
+.padding-bottom {
+	padding: 0 0 60px;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.terms-ul {
+	list-style-type: disc;
+}
+
+.terms-ul li {
+	margin: 0 0 10px;
+}
+
+.body {
+	text-align: justify;
+}
+
+.testimonial {
+	font-style: italic;
+}
+
+#testimonials {
+	border-top: 1px solid #eeeeee;
+}
+
+.bottom-padding {
+	width: 100%;
+	height: 30px;
+}
+
+.nav {
+	background: #f8f8f8;
+}
+
+.home-frame {
+	margin: 50px 0 0;
+}
+
+.hiw-text {
+	padding: 20px 0 0;
+}
+
+.bottomed {
+	margin: 0 0 40px;
+}
